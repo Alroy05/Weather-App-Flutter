@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFFEE4D5F), Color.fromARGB(255, 236, 171, 118)],
+            colors: [Color(0xFF9EE5FA), Colors.white],
           ),
         ),
         child: Column(
@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 fontSize: 35.0,
                 fontFamily: 'Raleway',
                 fontWeight: FontWeight.w300,
-                color: Colors.white,
+                color: Color(0xFF276589),
               ),
             ),
           ],

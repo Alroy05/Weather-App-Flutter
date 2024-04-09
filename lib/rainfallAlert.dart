@@ -9,6 +9,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
+  bool showMoreOptions = false;
   String apiKey = '54a4215d65eb60a2a0c49c14c289a227';
   String city = "Mumbai";
   dynamic weatherData;
@@ -124,7 +125,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         fontFamily: 'Raleway',
                         fontWeight: FontWeight.w700,
                         fontSize: 50,
-                        color: Colors.white,
+                        color: Color(0xFF276589),
                       ),
                     ),
                     SizedBox(
@@ -148,8 +149,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       ),
                       child: DropdownButton(
                         value: city,
-                        dropdownColor:
-                            Color.fromARGB(255, 247, 87, 106).withOpacity(0.7),
+                        dropdownColor: Color(0xFF9EE5FA).withOpacity(0.9),
                         items: cities.map<DropdownMenuItem<String>>(
                           (String value) {
                             return DropdownMenuItem<String>(
@@ -159,7 +159,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                     fontFamily: 'Raleway',
                                     fontWeight: FontWeight.w300,
                                     fontSize: 25,
-                                    color: Colors.white,
+                                    color: Color(0xFF276589),
                                   )),
                             );
                           },
@@ -177,236 +177,177 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       height: 20,
                     ),
                     Container(
-                      height: 100,
-                      child: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '${weatherData['weather'][0]['description'][0].toUpperCase()}${weatherData['weather'][0]['description'].substring(1)}',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                              ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '${weatherData['weather'][0]['description'][0].toUpperCase()}${weatherData['weather'][0]['description'].substring(1)}',
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: 'Raleway',
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xFF276589),
                             ),
-                            SizedBox(height: 20),
-                            weatherData['rain'] != null
-                                ? Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Precipitation: ${weatherData['rain']['1h']}mm',
-                                        style: TextStyle(
-                                          fontSize: 25,
-                                          fontFamily: 'Raleway',
-                                          fontWeight: FontWeight.w300,
-                                          color: Colors.white,
-                                        ),
+                          ),
+                          SizedBox(height: 20),
+                          weatherData['rain'] != null
+                              ? Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Precipitation: ${weatherData['rain']['1h']}mm',
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        fontFamily: 'Raleway',
+                                        fontWeight: FontWeight.w300,
+                                        color: Color(0xFF276589),
                                       ),
-                                      SizedBox(height: 20),
-                                      Text(
-                                        'Wind speed: ${weatherData['wind']['speed']} m s',
-                                        style: TextStyle(
-                                          fontSize: 25,
-                                          fontFamily: 'Raleway',
-                                          fontWeight: FontWeight.w300,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                : Text(
-                                    'Wind speed: ${weatherData['wind']['speed']} m s',
-                                    style: TextStyle(
-                                      fontSize: 25,
-                                      fontFamily: 'Raleway',
-                                      fontWeight: FontWeight.w300,
-                                      color: Colors.white,
                                     ),
+                                    SizedBox(height: 20),
+                                    Text(
+                                      'Wind speed: ${weatherData['wind']['speed']} m s',
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        fontFamily: 'Raleway',
+                                        fontWeight: FontWeight.w300,
+                                        color: Color(0xFF276589),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              : Text(
+                                  'Wind speed: ${weatherData['wind']['speed']} m s',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xFF276589),
                                   ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Wind Deg:${weatherData['wind']['deg']}°',
+                                ),
+                          SizedBox(height: 20),
+                          Text(
+                            'Wind Deg:${weatherData['wind']['deg']}°',
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: 'Raleway',
+                              fontWeight: FontWeight.w300,
+                              color: Color(0xFF276589),
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          AnimatedContainer(
+                            duration: Duration(milliseconds: 500),
+                            height: showMoreOptions ? 460 : 0,
+                            curve: Curves.easeInOut,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Humidity:${weatherData['main']['humidity']}g/cu m',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xFF276589),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Feels Like:${weatherData['main']['feels_like']}°C',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xFF276589),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Temp min:${weatherData['main']['temp_min']}°C',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xFF276589),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Temp max:${weatherData['main']['temp_max']}°C',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xFF276589),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Visibility:${weatherData['visibility'] / 1000}km',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xFF276589),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Latitude:${weatherData['coord']['lat']}°',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xFF276589),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Longitude:${weatherData['coord']['lon']}°',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xFF276589),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Pressure:${weatherData['main']['pressure']}',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xFF276589),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                              ],
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                showMoreOptions = !showMoreOptions;
+                              });
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Color(0xFF9EE5FA), // Background color
+                            ),
+                            child: Text(
+                              showMoreOptions ? 'See less' : 'See more',
                               style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 20,
                                 fontFamily: 'Raleway',
                                 fontWeight: FontWeight.w300,
-                                color: Colors.white,
+                                color: Color(0xFF276589),
                               ),
                             ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Humidity:${weatherData['main']['humidity']}g/cu m',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Feels Like:${weatherData['main']['feels_like']}°C',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Temp min:${weatherData['main']['temp_min']}°C',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Temp max:${weatherData['main']['temp_max']}°C',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Visiblity:${weatherData['visibility'] / 1000}km',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Latitude:${weatherData['coord']['lat']}°',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Longitude:${weatherData['coord']['lon']}°',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Pressure:${weatherData['main']['pressure']}',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w300,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
-                    Container(
-                      height: 20,
-                    ),
-                    Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(30, 255, 255, 255),
-                        ),
-                        height: 80,
-                        width: double.infinity,
-                        padding: EdgeInsets.all(10),
-                        child: Center(
-                          child: Text(
-                            temperature > 40 && Dynamic_City_value == "Mumbai"
-                                ? "MUMBAI:BE ALERT TEMPREATURE IS REACHING ABOVE 40 deg cel "
-                                : temperature > 45 &&
-                                        Dynamic_City_value == "Delhi"
-                                    ? "DELHI:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                    : temperature > 38 &&
-                                            Dynamic_City_value == "Bangalore"
-                                        ? "BANGLORE:BE ALERT TEMPREATURE IS REACHING ABOVE 38 deg cel"
-                                        : temperature > 40 &&
-                                                Dynamic_City_value ==
-                                                    "Hyderabad"
-                                            ? "Hyderbad:BE ALERT TEMPREATURE IS REACHING ABOVE 40 deg cel"
-                                            : temperature > 45 &&
-                                                    Dynamic_City_value ==
-                                                        "Chennai"
-                                                ? "Chennai:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                                : temperature > 45 &&
-                                                        Dynamic_City_value ==
-                                                            "Kolkata"
-                                                    ? "Kolkata:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                                    : temperature > 45 &&
-                                                            Dynamic_City_value ==
-                                                                "Pune"
-                                                        ? "Pune:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                                        : temperature > 50 &&
-                                                                Dynamic_City_value ==
-                                                                    "Ahmedabad"
-                                                            ? "Ahmedbad:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
-                                                            : temperature >
-                                                                        50 &&
-                                                                    Dynamic_City_value ==
-                                                                        "Jaipur"
-                                                                ? "Jaipur:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
-                                                                : temperature >
-                                                                            45 &&
-                                                                        Dynamic_City_value ==
-                                                                            "Surat"
-                                                                    ? "Surat:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                                                    : temperature >
-                                                                                47 &&
-                                                                            Dynamic_City_value ==
-                                                                                "Lucknow"
-                                                                        ? "Lucknow:BE ALERT TEMPREATURE IS REACHING ABOVE 47 deg cel"
-                                                                        : temperature > 50 &&
-                                                                                Dynamic_City_value == "Kanpur"
-                                                                            ? "Kanpur:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
-                                                                            : temperature > 50 && Dynamic_City_value == "Nagpur"
-                                                                                ? "Nagpur:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
-                                                                                : temperature > 45 && Dynamic_City_value == "Visakhapatnam"
-                                                                                    ? "Visakhapatnam:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                                                                    : temperature > 45 && Dynamic_City_value == "Bhopal"
-                                                                                        ? "Bhopal:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                                                                        : temperature > 45 && Dynamic_City_value == "Patna"
-                                                                                            ? "Patna:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                                                                            : temperature > 50 && Dynamic_City_value == "Agra"
-                                                                                                ? "Agra:BE ALERT TEMPREATURE IS REACHING ABOVE 50 deg cel"
-                                                                                                : temperature > 45 && Dynamic_City_value == "Nashik"
-                                                                                                    ? "Nashik:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                                                                                    : temperature > 45 && Dynamic_City_value == "Vadodara"
-                                                                                                        ? "Vadodara:BE ALERT TEMPREATURE IS REACHING ABOVE 45 deg cel"
-                                                                                                        : "Alerts for ${city} will be displayed here",
-
-                            // temperature > 35
-                            //     ? "BE ALERT"
-                            //     : "ALERTS GENERATED ARE SEEN HERE",
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w700),
-                          ),
-                        ))
                   ],
                 ),
               ),

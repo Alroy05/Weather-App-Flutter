@@ -32,13 +32,13 @@ class _MyAppState extends State<WeatherForecast> {
             'Weather Forecast',
             style: TextStyle(fontFamily: 'Raleway'),
           ),
-          backgroundColor: Color(0xFFEE4D5F),
-          foregroundColor: Colors.white,
+          backgroundColor: Color(0xFF9EE5FA),
+          foregroundColor: Color(0xFF276589),
           centerTitle: true,
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.white,
+              color: Color(0xFF276589),
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -51,8 +51,8 @@ class _MyAppState extends State<WeatherForecast> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color(0xFFEE4D5F),
-                Color.fromARGB(255, 236, 171, 118),
+                Color(0xFF9EE5FA),
+                Colors.white,
               ],
             ),
           ),
@@ -97,17 +97,17 @@ class _MyAppState extends State<WeatherForecast> {
                       title: Text(
                         '${weatherData[index]['weather'][0]['description']}',
                         style: TextStyle(
-                            color: Colors.white, fontFamily: 'Raleway'),
+                            color: Color(0xFF276589), fontFamily: 'Raleway'),
                       ),
                       subtitle: Text(
                         '${weatherData[index]['main']['temp'].round()}°C',
                         style: TextStyle(
-                            color: Colors.white, fontFamily: 'Raleway'),
+                            color: Color(0xFF276589), fontFamily: 'Raleway'),
                       ),
                       trailing: Text(
                         formattedTime,
                         style: TextStyle(
-                            color: Colors.white, fontFamily: 'Raleway'),
+                            color: Color(0xFF276589), fontFamily: 'Raleway'),
                       ),
                     );
                   },
