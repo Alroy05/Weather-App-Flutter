@@ -67,9 +67,9 @@ class DisastersScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -101,9 +101,9 @@ class DisastersScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -140,9 +140,9 @@ class DisastersScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -174,9 +174,9 @@ class DisastersScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -213,9 +213,9 @@ class DisastersScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -247,9 +247,9 @@ class DisastersScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),

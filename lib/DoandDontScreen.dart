@@ -7,7 +7,6 @@ import 'package:dis_man_sym/DOandDonts/tsunami.dart';
 import 'package:flutter/material.dart';
 import 'DOandDonts/EarthQuake.dart';
 import 'DOandDonts/Drought.dart';
-import 'package:humanitarian_icons/humanitarian_icons.dart';
 
 class DoandDontScreen extends StatelessWidget {
   const DoandDontScreen({super.key});
@@ -67,9 +66,9 @@ class DoandDontScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -101,9 +100,9 @@ class DoandDontScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -140,9 +139,9 @@ class DoandDontScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -174,9 +173,9 @@ class DoandDontScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -213,9 +212,9 @@ class DoandDontScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),
@@ -247,9 +246,9 @@ class DoandDontScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
                         textStyle:
                             TextStyle(fontSize: 20.0, fontFamily: 'Raleway'),
                       ),

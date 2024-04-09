@@ -97,9 +97,9 @@ class HomeScreen extends StatelessWidget {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.transparent,
+                            backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent,
-                            onPrimary: Colors.white,
+                            foregroundColor: Colors.white,
                             textStyle: TextStyle(
                                 fontSize: 20.0, fontFamily: 'Raleway'),
                           ),
@@ -130,9 +130,9 @@ class HomeScreen extends StatelessWidget {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.transparent,
+                            backgroundColor: Colors.transparent,
                             shadowColor: Color.fromARGB(0, 249, 249, 249),
-                            onPrimary: Colors.white,
+                            foregroundColor: Colors.white,
                             textStyle: TextStyle(
                                 fontSize: 20.0, fontFamily: 'Raleway'),
                           ),
@@ -171,9 +171,9 @@ class HomeScreen extends StatelessWidget {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.transparent,
+                            backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent,
-                            onPrimary: Colors.white,
+                            foregroundColor: Colors.white,
                             textStyle: TextStyle(
                                 fontSize: 20.0, fontFamily: 'Raleway'),
                           ),
@@ -207,9 +207,9 @@ class HomeScreen extends StatelessWidget {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.transparent,
+                            backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent,
-                            onPrimary: Colors.white,
+                            foregroundColor: Colors.white,
                             textStyle: TextStyle(
                                 fontSize: 20.0, fontFamily: 'Raleway'),
                           ),
@@ -245,9 +245,9 @@ class HomeScreen extends StatelessWidget {
                     //     //     );
                     //     //   },
                     //       style: ElevatedButton.styleFrom(
-                    //         primary: Colors.transparent,
+                    //         backgroundColor: Colors.transparent,
                     //         shadowColor: Colors.transparent,
-                    //         onPrimary: Colors.white,
+                    //         foregroundColor: Colors.white,
                     //         textStyle: TextStyle(
                     //             fontSize: 20.0, fontFamily: 'Raleway'),
                     //       ),
